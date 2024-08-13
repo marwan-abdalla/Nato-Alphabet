@@ -8,10 +8,16 @@ def nato_dictionary():
     nato_dict = {row["letter"]: row["code"] for index, row in alphabet_data_frame.iterrows()}
     # Asks user to input a sentence
     user_input = input("Please type a sentence: ").upper()
-    # Converts the input sentence into NATO phonetic alphabet words
-    nato_dict = [nato_dict[letter] for letter in user_input]
-
-    return nato_dict
+    try:
+        # Converts the input sentence into NATO phonetic alphabet words
+        nato_dict = [nato_dict[letter] for letter in user_input]
+    
+    except KeyError:
+        print("Sorry, only letters in the alphabet please.")
+        nato_dictionary()
+    
+    else:
+        print(nato_dict)
 
 
 def main():
@@ -25,7 +31,7 @@ def main():
     while continue_using:
         user_decision = input("Would you like to input a sentence? Type 'Y' or 'N': ")
         if user_decision.upper() == 'Y':
-            print(nato_dictionary())
+            nato_dictionary()
         elif user_decision.upper() == 'N':
             continue_using = False
         else:
