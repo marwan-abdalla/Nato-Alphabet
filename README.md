@@ -28,3 +28,6 @@ To use this program, please install the following locally:
 Contributions are welcome! If you have any suggestions for improvement, please create a pull request or open an issue.
 
 Enjoy using the NATO Phonetic Alphabet Converter!
+
+## License
+This project is open-source and available under the MIT License.
